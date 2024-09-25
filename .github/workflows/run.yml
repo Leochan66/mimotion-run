@@ -6,7 +6,8 @@ on:
   #pull_request:
   #  branches: [ master ]
   schedule:
-    - cron: '0 1,0,2,5,7,9,11,12 * * *'
+    - cron: '15 1 * * *'  # 每天凌晨1点15分
+    - cron: '0 0,2,5,7,9,11,12 * * *'  # 原有的定时设置
   watch:
     types: started
   workflow_dispatch:
