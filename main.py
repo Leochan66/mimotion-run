@@ -180,6 +180,9 @@ class MiMotion():
         except Exception as e:
             error_traceback = traceback.format_exc()
             print(error_traceback)
+            
+        min_step = 10000
+        max_step = 19999
         try:
             min_step = int(self.check_item.get("min_step", 10000))
         except Exception as e:
