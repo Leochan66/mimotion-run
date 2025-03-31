@@ -195,6 +195,7 @@ class MiMotion():
             
         if min_step==max_step:
             step = str(min_step)
+            
         else:
             min_step = math.ceil(min_step * step_ratio)
             max_step = math.ceil(max_step * step_ratio)
