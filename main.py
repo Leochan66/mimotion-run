@@ -181,8 +181,7 @@ class MiMotion():
             error_traceback = traceback.format_exc()
             print(error_traceback)
             
-        min_step = 10000
-        max_step = 19999
+
         try:
             min_step = int(self.check_item.get("min_step", 10000))
         except Exception as e:
@@ -194,12 +193,11 @@ class MiMotion():
             print("初始化步数失败: 已将最大值设置为 19999", e)
             max_step = 19999
             
-        step = 15689
         if min_step==max_step:
             step = str(min_step)
         else
-            min_step = math.ceil(int(min_step) * step_ratio)
-            max_step = math.ceil(int(max_step) * step_ratio)
+            min_step = math.ceil(min_step * step_ratio)
+            max_step = math.ceil(max_step * step_ratio)
             step = str(random.randint(min_step, max_step))
             
         if ("+86" in user) or "@" in user:
