@@ -273,7 +273,17 @@ if __name__ == "__main__":
         else:
             area = "NO"
         # 和风天气 Private KEY
-        
+        if datas.get("OPEN_GET_WEATHER"):
+            qweather = datas.get("OPEN_GET_WEATHER")
+        else:
+            qweather = "False"
+        msg = ""
+        for i in range(len(datas.get("MIMOTION", []))):
+            #print(i)
+            _check_item = datas.get("MIMOTION", [])[i]
+            #print(_check_item)
+            msg += MiMotion(check_item=_check_item).main()
+        print(msg)
         # 酷推skey和server酱sckey和企业微信设置，只用填一个其它留空即可
         if datas.get("SKEY"):
             skey = datas.get("SKEY")
